@@ -1,0 +1,20 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# crawl outputs
+out.json
+out.csv
+*.jsonl
+*.jl
+.scrapy/
+htmlcache/
