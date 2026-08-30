@@ -4,9 +4,22 @@ import pytest
 import scrapy
 from scrapy.exceptions import NotConfigured
 from scrapy.http import HtmlResponse
-from scrapy.utils.test import get_crawler
+from scrapy.settings import Settings
+from scrapy.signalmanager import SignalManager
 
 from amazon_spiders.middlewares import ScrapeUnblockerMiddleware
+
+
+class _FakeCrawler:
+    """Minimal crawler stub - ``from_crawler`` only needs ``settings`` and ``signals``.
+
+    Avoids ``scrapy.utils.test.get_crawler``, which on Scrapy >= 2.13 requires an
+    installed Twisted reactor and raises ``RuntimeError`` under a plain pytest run.
+    """
+
+    def __init__(self, settings_dict=None):
+        self.settings = Settings(settings_dict or {})
+        self.signals = SignalManager(self)
 
 
 def _mw(enabled=True, key="testkey"):
@@ -67,6 +80,6 @@ def test_process_response_restores_original_url():
 
 def test_from_crawler_requires_key_when_enabled(monkeypatch):
     monkeypatch.delenv("SCRAPEUNBLOCKER_KEY", raising=False)
-    crawler = get_crawler(settings_dict={"SU_LOCAL_ROUTING": True})
+    crawler = _FakeCrawler({"SU_LOCAL_ROUTING": True})
     with pytest.raises(NotConfigured):
         ScrapeUnblockerMiddleware.from_crawler(crawler)
