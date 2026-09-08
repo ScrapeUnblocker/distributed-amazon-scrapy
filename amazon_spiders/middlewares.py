@@ -18,7 +18,7 @@ endpoint (query-string parameters, ``x-scrapeunblocker-key`` header) and then
 restoring the original URL on the response so the spider's selectors and
 ``response.urljoin`` keep working unchanged.
 
-Docs: https://developers.scrapeunblocker.com/guides/page-source?utm_source=github&utm_medium=integration&utm_campaign=example-repos
+Docs: https://docs.scrapeunblocker.com/guides/page-source?utm_source=github&utm_medium=integration&utm_campaign=example-repos
 """
 
 from __future__ import annotations

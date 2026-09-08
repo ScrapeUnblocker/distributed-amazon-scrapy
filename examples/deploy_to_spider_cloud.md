@@ -1,7 +1,7 @@
 # Deploy to Spider Cloud
 
 Once the spiders run locally, deploying the same project to
-[ScrapeUnblocker Spider Cloud](https://developers.scrapeunblocker.com/spider-cloud/?utm_source=github&utm_medium=integration&utm_campaign=example-repos)
+[ScrapeUnblocker Spider Cloud](https://docs.scrapeunblocker.com/spider-cloud/?utm_source=github&utm_medium=integration&utm_campaign=example-repos)
 lets you run them at scale on a schedule, with routing applied automatically.
 **Nothing about this project needs to change** - `scrapy.cfg` and the spiders are
 all Spider Cloud needs.
@@ -38,4 +38,4 @@ are routed for you - no key handling, no middleware config.
 
 Add a schedule from the dashboard to run a spider on a cron cadence and send
 results to a destination (webhook, storage bucket, etc.). See the
-[schedules docs](https://developers.scrapeunblocker.com/spider-cloud/schedules?utm_source=github&utm_medium=integration&utm_campaign=example-repos).
+[schedules docs](https://docs.scrapeunblocker.com/spider-cloud/schedules?utm_source=github&utm_medium=integration&utm_campaign=example-repos).

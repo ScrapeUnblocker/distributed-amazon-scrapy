@@ -8,7 +8,7 @@ development the bundled :class:`~amazon_spiders.middlewares.ScrapeUnblockerMiddl
 reproduces that routing by calling the public ``getPageSource`` endpoint, so the
 same spiders run identically on your laptop and in the cloud.
 
-Docs: https://developers.scrapeunblocker.com/spider-cloud/?utm_source=github&utm_medium=integration&utm_campaign=example-repos
+Docs: https://docs.scrapeunblocker.com/spider-cloud/?utm_source=github&utm_medium=integration&utm_campaign=example-repos
 """
 
 __version__ = "0.1.0"

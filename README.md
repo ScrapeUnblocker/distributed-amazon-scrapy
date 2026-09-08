@@ -6,7 +6,7 @@
 
 A production-shaped **Scrapy** project that scrapes Amazon search listings and
 product pages **at scale** on
-[ScrapeUnblocker **Spider Cloud**](https://developers.scrapeunblocker.com/spider-cloud/?utm_source=github&utm_medium=integration&utm_campaign=example-repos)
+[ScrapeUnblocker **Spider Cloud**](https://docs.scrapeunblocker.com/spider-cloud/?utm_source=github&utm_medium=integration&utm_campaign=example-repos)
 — deploy and run in minutes.
 
 > **Powered by [ScrapeUnblocker](https://scrapeunblocker.com/?utm_source=github&utm_medium=integration&utm_campaign=example-repos).**
@@ -19,7 +19,7 @@ Every request is marked with `meta={"unblock": True}`. On Spider Cloud that flag
 routes the request through ScrapeUnblocker **automatically** — the project needs
 no SDK, no base class and no config. For local development, a bundled downloader
 middleware reproduces the exact same routing by calling the public
-[`getPageSource`](https://developers.scrapeunblocker.com/guides/page-source?utm_source=github&utm_medium=integration&utm_campaign=example-repos)
+[`getPageSource`](https://docs.scrapeunblocker.com/guides/page-source?utm_source=github&utm_medium=integration&utm_campaign=example-repos)
 endpoint, so the same spiders run identically on your laptop and in the cloud.
 
 ```
@@ -172,9 +172,9 @@ make run         # example crawl (needs the two env vars)
 ## Links
 
 - Website — https://scrapeunblocker.com/?utm_source=github&utm_medium=integration&utm_campaign=example-repos
-- Docs — https://developers.scrapeunblocker.com/?utm_source=github&utm_medium=integration&utm_campaign=example-repos
-- Spider Cloud — https://developers.scrapeunblocker.com/spider-cloud/?utm_source=github&utm_medium=integration&utm_campaign=example-repos
-- getPageSource guide — https://developers.scrapeunblocker.com/guides/page-source?utm_source=github&utm_medium=integration&utm_campaign=example-repos
+- Docs — https://docs.scrapeunblocker.com/?utm_source=github&utm_medium=integration&utm_campaign=example-repos
+- Spider Cloud — https://docs.scrapeunblocker.com/spider-cloud/?utm_source=github&utm_medium=integration&utm_campaign=example-repos
+- getPageSource guide — https://docs.scrapeunblocker.com/guides/page-source?utm_source=github&utm_medium=integration&utm_campaign=example-repos
 
 ## License
 
