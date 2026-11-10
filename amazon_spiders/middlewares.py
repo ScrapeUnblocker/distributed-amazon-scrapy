@@ -79,7 +79,7 @@ class ScrapeUnblockerMiddleware:
                 "On Spider Cloud, meta['unblock'] requests are routed automatically."
             )
 
-    def process_request(self, request, spider):
+    def process_request(self, request, spider=None):
         if not self.enabled or request.meta.get(_ROUTED_FLAG):
             return None
         if not request.meta.get("unblock"):
@@ -100,7 +100,7 @@ class ScrapeUnblockerMiddleware:
         # POST with an empty body, exactly like Spider Cloud routing does.
         return request.replace(url=api_url, method="POST", body=b"", headers=headers, meta=meta)
 
-    def process_response(self, request, response, spider):
+    def process_response(self, request, response, spider=None):
         if request.meta.get(_ROUTED_FLAG):
             # Restore the original URL so selectors and urljoin behave normally.
             return response.replace(url=request.meta[_ORIG_URL])

@@ -15,6 +15,7 @@ _SYMBOLS = {
     "US$": "USD",
     "C$": "CAD",
     "A$": "AUD",
+    "S$": "SGD",
     "£": "GBP",
     "€": "EUR",
     "₹": "INR",

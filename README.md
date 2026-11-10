@@ -1,7 +1,7 @@
 # distributed-amazon-scrapy
 
 [![CI](https://github.com/ScrapeUnblocker/distributed-amazon-scrapy/actions/workflows/ci.yml/badge.svg)](https://github.com/ScrapeUnblocker/distributed-amazon-scrapy/actions/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 A production-shaped **Scrapy** project that scrapes Amazon search listings and
@@ -77,6 +77,10 @@ scrapy crawl amazon_search \
 # Product detail by ASIN -> CSV
 scrapy crawl amazon_product -a asins="B09B8V1LZ3,B0EXAMPLE9" -O products.csv
 ```
+
+Amazon prices follow the visitor's location: without `country`, amazon.com can
+answer in another currency (e.g. `S$` prices). Add `-a country=us` (or
+`--country us` on the CLI) for USD.
 
 ### With the convenience CLI
 

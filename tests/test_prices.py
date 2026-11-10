@@ -13,6 +13,12 @@ def test_gbp_symbol():
     assert parse_price("£29.99") == (29.99, "GBP")
 
 
+def test_prefixed_dollar_is_not_usd():
+    # Amazon shows local currency to non-US visitors, e.g. "S$123.57" on amazon.com.
+    assert parse_price("S$123.57") == (123.57, "SGD")
+    assert parse_price("US$12.00") == (12.00, "USD")
+
+
 def test_plain_integer():
     assert parse_amount("5") == 5.0
 

@@ -42,7 +42,7 @@ class AmazonProductSpider(scrapy.Spider):
         if not self.start_urls:
             raise ValueError("Provide -a asins='A,B' or -a urls='https://...'")
 
-    def start_requests(self):
+    async def start(self):
         for url in self.start_urls:
             meta = {"unblock": True}
             if self.country:

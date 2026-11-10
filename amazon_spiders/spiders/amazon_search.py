@@ -43,7 +43,7 @@ class AmazonSearchSpider(scrapy.Spider):
     def _search_url(self, keyword: str, page: int) -> str:
         return f"https://{self.marketplace}/s?k={quote_plus(keyword)}&page={page}"
 
-    def start_requests(self):
+    async def start(self):
         for keyword in self.keywords:
             yield self._make_request(keyword, page=1)
 
